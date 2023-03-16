@@ -26,15 +26,22 @@
                         <div>
                            
                             <input type="number" name="generalcapchaCode" hidden  value="@ViewBag.RandomNumber" required="required" />
-                            <span asp-validation-for="Price"></span>
+                         
                         </div>
                         <div>
                             <label>کد امنیتی را وارد کنید :</label>
                             <span>@ViewBag.RandomNumber</span>
                             <input type="text" asp-for="CapchaCode"  required="required"/>
-                        </div>
+                                <span asp-validation-for="Price"></span>
+                          
+                            </div>
                     </div>
-
+                       <div>
+                        @if (ViewBag.Input != null)
+                        {
+                            <h3 class="text-danger">@ViewBag.Input</h3>
+                        }
+                    </div>
                     <button class="btn btn-warning btn-lg" asp-controller="Payment" asp-action="CompleteOrder">تایید </button>
 
                 </div>
@@ -43,3 +50,4 @@
         </div>
     </div>
 </form>
+

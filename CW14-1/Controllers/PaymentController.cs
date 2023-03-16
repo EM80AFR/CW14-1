@@ -12,8 +12,9 @@ namespace CW14_1.Controllers
             return View();
         }
 
-        public IActionResult CompleteOrder()
+        public IActionResult CompleteOrder(string? input)
         {
+            ViewBag.Input = input;
             var random = new Random();
             ViewBag.RandomNumber = random.Next(1000,9999);
             return View();
@@ -32,7 +33,7 @@ namespace CW14_1.Controllers
             }
            
 
-            return null;
+            return CompleteOrder("کد صحیح نیست ");
         }
     }
 }
